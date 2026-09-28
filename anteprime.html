@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anteprime reali · awesome-claude-design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--chrome:#0e0e11;--chrome2:#17171c;--line:#2a2a33;--txt:#e9e9ef;--dim:#9a9aa8;--accent:#d97757}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--chrome);color:var(--txt);font:15px/1.55 'Inter',-apple-system,'Segoe UI',Roboto,sans-serif}
+a{color:inherit}
+code,kbd{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.86em}
+header.top{position:sticky;top:0;z-index:30;background:rgba(14,14,17,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1440px;margin:0 auto;padding:14px 20px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+.top h1{font-size:16px;margin:0;letter-spacing:-.01em}
+.top .sub{color:var(--dim);font-size:12.5px}
+.top .spacer{flex:1}
+.fbtn{background:var(--chrome2);color:var(--txt);border:1px solid var(--line);border-radius:999px;padding:5px 11px;font:500 12px/1 'Inter',sans-serif;cursor:pointer}
+.fbtn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.filtri{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.titolo{min-width:0}
+.wrap{max-width:1440px;margin:0 auto;padding:26px 20px 80px}
+.intro{max-width:900px;color:var(--dim);font-size:14px}
+.intro strong{color:var(--txt);font-weight:600}
+.famhead{margin:44px 0 14px;padding-top:18px;border-top:1px solid var(--line)}
+.famhead h2{margin:0 0 4px;font-size:20px;letter-spacing:-.01em}
+.famhead p{margin:0;color:var(--dim);font-size:13.5px;max-width:820px}
+.strip{display:flex;gap:3px;margin-top:10px}
+.strip i{width:22px;height:8px;border-radius:2px;display:block}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(min(560px,100%),1fr))}
+@media (max-width:1180px){.grid{grid-template-columns:1fr}}
+.card{border-radius:16px;overflow:hidden;background:var(--bg);color:var(--ink);border:1px solid rgba(128,128,128,.22);scroll-margin-top:96px;display:flex;flex-direction:column}
+.cardbar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 14px;font:500 11px/1 'Inter',sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);border-bottom:1px solid var(--border);background:var(--bg2)}
+.cardbar a{text-decoration:none;border-bottom:1px solid currentColor;opacity:.75}
+.cardbar a:hover{opacity:1}
+.cardbody{padding:20px;display:flex;flex-direction:column;gap:18px;flex:1}
+.brand{font-family:var(--fd);font-size:30px;line-height:1.08;margin:0;letter-spacing:-.02em;font-weight:600}
+.tagline{font-family:var(--fb);color:var(--ink2);font-size:13.5px;margin:6px 0 0;max-width:70ch}
+.palette{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border-radius:8px;padding:6px 9px;min-width:78px;border:1px solid var(--border)}
+.chip b{display:block;font:600 11px/1.3 'Inter',sans-serif;letter-spacing:.02em}
+.chip span{display:block;font:400 10.5px/1.4 'JetBrains Mono',monospace;opacity:.75}
+.sez{display:flex;flex-direction:column;gap:8px}
+.lbl{font:600 10px/1 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.spec-display .h1{font-family:var(--fd);font-size:40px;line-height:1.04;letter-spacing:-.025em;margin:8px 0 2px;font-weight:600}
+.spec-display .h2{font-family:var(--fd);font-size:22px;line-height:1.2;margin:0;font-weight:500;color:var(--ink2)}
+.spec-body p{font-family:var(--fb);margin:8px 0 0;max-width:62ch;font-size:15px;line-height:1.62}
+.spec-body .ui{font-family:var(--fb);font-size:12px;letter-spacing:.02em;color:var(--ink2)}
+.spec-mono pre{font-family:var(--fm);font-size:12.5px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:10px 12px;margin:8px 0 0;overflow:auto;color:var(--ink)}
+.riga{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{font-family:var(--fb);font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:var(--r);border:1px solid transparent;cursor:default}
+.btn-p{background:var(--accent);color:var(--inkbtn);border-color:var(--accent)}
+.btn-s{background:transparent;color:var(--ink);border-color:var(--border)}
+.btn-g{background:transparent;color:var(--ink);text-decoration:underline;border-color:transparent;padding-left:4px;padding-right:4px}
+.inp{font-family:var(--fb);font-size:13.5px;background:var(--bg);color:var(--ink);border:1px solid var(--border);border-radius:var(--r);padding:9px 12px;min-width:210px}
+.inp.focus{outline:2px solid var(--accent);outline-offset:2px}
+.pill{font-family:var(--fb);font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--accentSoft);color:var(--inkacc)}
+.minicard{background:var(--bg2);border:1px solid var(--border);border-radius:calc(var(--r) + 2px);padding:14px;max-width:270px}
+.minicard h4{margin:0 0 4px;font-family:var(--fb);font-size:13.5px}
+.minicard p{margin:0;font-family:var(--fb);font-size:12.5px;color:var(--ink2)}
+table.t{width:100%;border-collapse:collapse;font-family:var(--fb);font-size:12.5px}
+table.t th{text-align:left;font:600 10.5px/1.4 var(--fm);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);border-bottom:1px solid var(--border);padding:6px 8px}
+table.t td{padding:6px 8px;border-bottom:1px solid var(--border)}
+table.t tbody tr:nth-child(odd){background:var(--bg2)}
+table.t .num{font-family:var(--fm);font-variant-numeric:tabular-nums;text-align:right}
+.scala{display:flex;gap:6px;align-items:flex-end;flex-wrap:wrap}
+.scala i{display:block;background:var(--ink);opacity:.8;width:10px;border-radius:1px}
+.scala b{font:400 10px/1 'JetBrains Mono',monospace;color:var(--ink2);display:block;text-align:center}
+.meta{display:flex;flex-wrap:wrap;gap:8px 14px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;color:var(--ink2)}
+.meta .k{font-weight:600;color:var(--ink)}
+.badge{display:inline-block;font:600 10px/1 'Inter',sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:4px 7px;border-radius:5px;border:1px solid var(--border);color:var(--ink2)}
+.badge.ok{border-color:var(--accent);color:var(--ink)}
+.dd{font-size:12.5px;color:var(--ink2);display:grid;gap:4px}
+.dd div::before{content:'+ ';font-weight:700;color:var(--accent)}
+.dd .no::before{content:'− ';font-weight:700;color:var(--ink2)}
+.nota{font-size:11.5px;color:var(--muted);font-style:italic}
+body.solo-palette .sez:not(.sez-palette),body.solo-palette .spec-display,body.solo-palette .spec-body,body.solo-palette .spec-mono,body.solo-palette .comp,body.solo-palette .meta{display:none}
+body.solo-palette .sez-palette{display:block}
+body.solo-palette .chip{min-width:120px;padding:12px}
+body.solo-palette .chip b{font-size:12px}
+footer.foot{border-top:1px solid var(--line);color:var(--dim);font-size:12.5px;padding:24px 20px 60px;max-width:1440px;margin:0 auto}
+footer.foot h3{color:var(--txt);font-size:14px;margin:18px 0 6px}
+footer.foot a{border-bottom:1px solid currentColor;text-decoration:none}
+
+/* --- mobile: sotto 820px la card diventa una colonna sola e i blocchi si impilano --- */
+@media (max-width:1180px){
+  header.top{position:static}
+  .fbtn{white-space:nowrap}
+  .top-in{flex-wrap:wrap;padding:12px 14px}
+  .top .spacer{display:none}
+  .filtri{flex-wrap:nowrap;overflow-x:auto;width:100%;padding-bottom:4px;scrollbar-width:thin}
+}
+@media (max-width:820px){
+  .wrap{padding:18px 12px 56px}
+  .famhead{margin:30px 0 12px}
+  .grid{gap:16px}
+  .card{border-radius:12px;scroll-margin-top:12px}
+  .cardbody{padding:14px;gap:14px}
+  .brand{font-size:24px}
+  .tagline{font-size:12.5px}
+  .spec-display .h1{font-size:30px}
+  .spec-display .h2{font-size:18px}
+  .spec-body p{font-size:14.5px;line-height:1.55}
+  .chip{min-width:62px;padding:5px 7px;border-radius:6px}
+  .chip b{font-size:10px}
+  .chip span{font-size:9.5px}
+  .cardbar{padding:7px 10px;font-size:10px;letter-spacing:.03em}
+  .riga{gap:8px}
+  .btn{padding:8px 12px;font-size:13px}
+  .inp{min-width:0;flex:1 1 160px}
+  .riga-comp{flex-direction:column;align-items:stretch !important}
+  .minicard{max-width:none}
+  table.t{font-size:11.5px}
+  table.t th,table.t td{padding:5px 6px}
+  .scala i{width:8px}
+  .spec-mono pre{font-size:11.5px;padding:8px 10px}
+}
+@media (max-width:520px){
+  .col-var{display:none}
+  .minicard p{font-size:12px}
+}
+
+.tile{background:var(--chrome2);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.grid2{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))}
+@media (max-width:520px){.grid2{gap:14px}.tile .fbtn{font-size:11.5px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <div><h1>Anteprime reali</h1><div class="sub">un brand rappresentativo per famiglia · screenshot di homepage pubbliche, non output di Claude Design</div></div>
+  <div class="spacer"></div>
+  <a class="fbtn" href="index.html" style="text-decoration:none">gallery dei design system →</a>
+</div></header>
+<div class="wrap">
+  <p class="intro">Questa pagina è l'<strong>indice visivo</strong>: le nove immagini sono gli screenshot che la repo stessa pubblica per la <a href="https://github.com/rohitg00/awesome-claude-design#preview-gallery" rel="noopener">preview gallery</a>, cioè le homepage pubbliche dei brand scelti come rappresentanti. Servono a dare un riferimento concreto alla famiglia. La ricostruzione dei <strong>token</strong> — palette, tipografia, componenti — sta invece in <a href="index.html">gallery.html</a>, dove ogni card è costruita dai valori del rispettivo <code>DESIGN.md</code>. La decima famiglia, <em>Remix</em>, non ha anteprima in repo perché non corrisponde a un brand singolo: sono innesti fra due sistemi.</p>
+  <div class="grid2" style="margin-top:26px"><div class="tile">
+    <a href="index.html#fam-editorial"><img src="img/anteprime/linear.jpg" alt="Homepage di riferimento per Editorial Minimalism" style="width:100%;height:190px;object-fit:cover;object-position:top center;display:block;border-bottom:1px solid var(--line)"></a>
+    <div style="padding:14px 16px 18px">
+      <h3 style="margin:0 0 4px;font-size:16px">Editorial Minimalism <span style="color:var(--dim);font-weight:400">· 2</span></h3>
+      <p style="margin:0 0 8px;color:var(--dim);font-size:13px">Gerarchia tipografica e monocromia: quasi tutto è testo, il colore è un evento raro.</p>
+      <p style="margin:0 0 10px;color:var(--txt);font-size:12.5px;opacity:.85">Linear · Vercel</p>
+      <a class="fbtn" style="text-decoration:none" href="index.html#fam-editorial">apri nella gallery →</a>
+    </div></div>
+<div class="tile">
+    <a href="index.html#fam-terminal"><img src="img/anteprime/ollama.jpg" alt="Homepage di riferimento per Terminal-Core" style="width:100%;height:190px;object-fit:cover;object-position:top center;display:block;border-bottom:1px solid var(--line)"></a>
+    <div style="padding:14px 16px 18px">
+      <h3 style="margin:0 0 4px;font-size:16px">Terminal-Core <span style="color:var(--dim);font-weight:400">· 3</span></h3>
+      <p style="margin:0 0 8px;color:var(--dim);font-size:13px">Il monospace è la voce primaria, non un accessorio: densità da riga di comando.</p>
+      <p style="margin:0 0 10px;color:var(--txt);font-size:12.5px;opacity:.85">Ollama · OpenCode AI · Warp</p>
+      <a class="fbtn" style="text-decoration:none" href="index.html#fam-terminal">apri nella gallery →</a>
+    </div></div>
+<div class="tile">
+    <a href="index.html#fam-warm"><img src="img/anteprime/anthropic.jpg" alt="Homepage di riferimento per Warm Editorial" style="width:100%;height:190px;object-fit:cover;object-position:top center;display:block;border-bottom:1px solid var(--line)"></a>
+    <div style="padding:14px 16px 18px">
+      <h3 style="margin:0 0 4px;font-size:16px">Warm Editorial <span style="color:var(--dim);font-weight:400">· 2</span></h3>
+      <p style="margin:0 0 8px;color:var(--dim);font-size:13px">Carta e inchiostro: superfici piatte, un solo accento caldo, ritmo lento da rivista.</p>
+      <p style="margin:0 0 10px;color:var(--txt);font-size:12.5px;opacity:.85">Claude (Anthropic) · Mercury</p>
+      <a class="fbtn" style="text-decoration:none" href="index.html#fam-warm">apri nella gallery →</a>
+    </div></div>
+<div class="tile">
+    <a href="index.html#fam-cinematic"><img src="img/anteprime/runwayml.jpg" alt="Homepage di riferimento per Cinematic Dark" style="width:100%;height:190px;object-fit:cover;object-position:top center;display:block;border-bottom:1px solid var(--line)"></a>
+    <div style="padding:14px 16px 18px">
+      <h3 style="margin:0 0 4px;font-size:16px">Cinematic Dark <span style="color:var(--dim);font-weight:400">· 9</span></h3>
+      <p style="margin:0 0 8px;color:var(--dim);font-size:13px">Nero pieno, immagini grandi, tipografia display: il prodotto si presenta come un film.</p>
+      <p style="margin:0 0 10px;color:var(--txt);font-size:12.5px;opacity:.85">BMW · Cohere · Ferrari · Lamborghini · MiniMax · NVIDIA · Renault · RunwayML · Tavus</p>
+      <a class="fbtn" style="text-decoration:none" href="index.html#fam-cinematic">apri nella gallery →</a>
+    </div></div>
+<div class="tile">
+    <a href="index.html#fam-data-dense"><img src="img/anteprime/clickhouse.jpg" alt="Homepage di riferimento per Data-Dense Pro" style="width:100%;height:190px;object-fit:cover;object-position:top center;display:block;border-bottom:1px solid var(--line)"></a>
+    <div style="padding:14px 16px 18px">
+      <h3 style="margin:0 0 4px;font-size:16px">Data-Dense Pro <span style="color:var(--dim);font-weight:400">· 4</span></h3>
+      <p style="margin:0 0 8px;color:var(--dim);font-size:13px">Tabelle, numeri tabulari e griglie strette: il design serve la lettura dei dati.</p>
+      <p style="margin:0 0 10px;color:var(--txt);font-size:12.5px;opacity:.85">ClickHouse · Datadog · MongoDB · PostHog</p>
+      <a class="fbtn" style="text-decoration:none" href="index.html#fam-data-dense">apri nella gallery →</a>
+    </div></div>
+<div class="tile">
+    <a href="index.html#fam-playful"><img src="img/anteprime/figma.jpg" alt="Homepage di riferimento per Playful Color" style="width:100%;height:190px;object-fit:cover;object-position:top center;display:block;border-bottom:1px solid var(--line)"></a>
+    <div style="padding:14px 16px 18px">
+      <h3 style="margin:0 0 4px;font-size:16px">Playful Color <span style="color:var(--dim);font-weight:400">· 3</span></h3>
+      <p style="margin:0 0 8px;color:var(--dim);font-size:13px">Più tinte insieme, angoli morbidi, tono amichevole: il brand È la palette.</p>
+      <p style="margin:0 0 10px;color:var(--txt);font-size:12.5px;opacity:.85">Canva · Figma · Toss</p>
+      <a class="fbtn" style="text-decoration:none" href="index.html#fam-playful">apri nella gallery →</a>
+    </div></div>
+<div class="tile">
+    <a href="index.html#fam-glass"><img src="img/anteprime/arc.jpg" alt="Homepage di riferimento per Glass / Soft-Futurism" style="width:100%;height:190px;object-fit:cover;object-position:top center;display:block;border-bottom:1px solid var(--line)"></a>
+    <div style="padding:14px 16px 18px">
+      <h3 style="margin:0 0 4px;font-size:16px">Glass / Soft-Futurism <span style="color:var(--dim);font-weight:400">· 2</span></h3>
+      <p style="margin:0 0 8px;color:var(--dim);font-size:13px">Materiali e profondità: blur, superfici stratificate, luce che attraversa i pannelli.</p>
+      <p style="margin:0 0 10px;color:var(--txt);font-size:12.5px;opacity:.85">Apple · Arc Browser</p>
+      <a class="fbtn" style="text-decoration:none" href="index.html#fam-glass">apri nella gallery →</a>
+    </div></div>
+<div class="tile">
+    <a href="index.html#fam-brutalist"><img src="img/anteprime/theverge.jpg" alt="Homepage di riferimento per Neon Brutalist" style="width:100%;height:190px;object-fit:cover;object-position:top center;display:block;border-bottom:1px solid var(--line)"></a>
+    <div style="padding:14px 16px 18px">
+      <h3 style="margin:0 0 4px;font-size:16px">Neon Brutalist <span style="color:var(--dim);font-weight:400">· 1</span></h3>
+      <p style="margin:0 0 8px;color:var(--dim);font-size:13px">Contrasto estremo, bordi netti, raggio zero: la tipografia alza la voce.</p>
+      <p style="margin:0 0 10px;color:var(--txt);font-size:12.5px;opacity:.85">The Verge</p>
+      <a class="fbtn" style="text-decoration:none" href="index.html#fam-brutalist">apri nella gallery →</a>
+    </div></div>
+<div class="tile">
+    <a href="index.html#fam-indie"><img src="img/anteprime/granola.jpg" alt="Homepage di riferimento per Cult · Indie" style="width:100%;height:190px;object-fit:cover;object-position:top center;display:block;border-bottom:1px solid var(--line)"></a>
+    <div style="padding:14px 16px 18px">
+      <h3 style="margin:0 0 4px;font-size:16px">Cult · Indie <span style="color:var(--dim);font-weight:400">· 1</span></h3>
+      <p style="margin:0 0 8px;color:var(--dim);font-size:13px">Scala piccola, calore, personalità fuori formato: sembra fatto a mano, non a sistema.</p>
+      <p style="margin:0 0 10px;color:var(--txt);font-size:12.5px;opacity:.85">Granola</p>
+      <a class="fbtn" style="text-decoration:none" href="index.html#fam-indie">apri nella gallery →</a>
+    </div></div>
+<div class="tile">
+    <div style="height:190px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#0b0b0e"><div style="background:#faf8f2;position:relative;display:flex;align-items:flex-end;padding:8px">
+      <span style="font:600 9px/1.2 'Inter',sans-serif;color:#1a1614;opacity:.85">Granola</span>
+      <span style="position:absolute;top:8px;left:8px;width:14px;height:14px;border-radius:4px;background:#b32418"></span></div><div style="background:#ffffff;position:relative;display:flex;align-items:flex-end;padding:8px">
+      <span style="font:600 9px/1.2 'Inter',sans-serif;color:#0f0f14;opacity:.85">Linear</span>
+      <span style="position:absolute;top:8px;left:8px;width:14px;height:14px;border-radius:4px;background:#c96442"></span></div><div style="background:#f6f5f2;position:relative;display:flex;align-items:flex-end;padding:8px">
+      <span style="font:600 9px/1.2 'Inter',sans-serif;color:#2a2924;opacity:.85">Mercury</span>
+      <span style="position:absolute;top:8px;left:8px;width:14px;height:14px;border-radius:4px;background:#5266eb"></span></div><div style="background:#ffffff;position:relative;display:flex;align-items:flex-end;padding:8px">
+      <span style="font:600 9px/1.2 'Inter',sans-serif;color:#37352f;opacity:.85">Notion</span>
+      <span style="position:absolute;top:8px;left:8px;width:14px;height:14px;border-radius:4px;background:#58cc02"></span></div><div style="background:#000000;position:relative;display:flex;align-items:flex-end;padding:8px">
+      <span style="font:600 9px/1.2 'Inter',sans-serif;color:#ffffff;opacity:.85">Ollama</span>
+      <span style="position:absolute;top:8px;left:8px;width:14px;height:14px;border-radius:4px;background:#2c6cff"></span></div><div style="background:#ffffff;position:relative;display:flex;align-items:flex-end;padding:8px">
+      <span style="font:600 9px/1.2 'Inter',sans-serif;color:#0a2540;opacity:.85">Stripe</span>
+      <span style="position:absolute;top:8px;left:8px;width:14px;height:14px;border-radius:4px;background:#635bff"></span></div><div style="background:#ffffff;position:relative;display:flex;align-items:flex-end;padding:8px">
+      <span style="font:600 9px/1.2 'Inter',sans-serif;color:#000000;opacity:.85">Vercel</span>
+      <span style="position:absolute;top:8px;left:8px;width:14px;height:14px;border-radius:4px;background:#ff5d1f"></span></div><div style="background:#0b0d14;position:relative;display:flex;align-items:flex-end;padding:8px">
+      <span style="font:600 9px/1.2 'Inter',sans-serif;color:#f1f1f4;opacity:.85">Warp</span>
+      <span style="position:absolute;top:8px;left:8px;width:14px;height:14px;border-radius:4px;background:#7553f6"></span></div></div>
+    <div style="padding:14px 16px 18px">
+      <h3 style="margin:0 0 4px;font-size:16px">Remix (due brand) <span style="color:var(--dim);font-weight:400">· 8</span></h3>
+      <p style="margin:0 0 8px;color:var(--dim);font-size:13px">Innesti dichiarati: due DNA di brand combinati con percentuali esplicite.</p>
+      <p style="margin:0 0 10px;color:var(--txt);font-size:12.5px;opacity:.85">Granola × Criterion · Linear × Claude · Mercury × Linear · Notion × Duolingo · Ollama × ElevenLabs · Stripe × A24 · Vercel × Pitchfork · Warp × Sentry</p>
+      <a class="fbtn" style="text-decoration:none" href="index.html#fam-remix">apri nella gallery →</a>
+    </div></div></div>
+
+  <h3 style="margin:44px 0 8px;font-size:15px">Come leggere le card della gallery</h3>
+  <ul class="intro" style="line-height:1.7">
+    <li><strong>Palette</strong>: i token <code>--nome: #valore</code> del file, con il ruolo dedotto dal nome della variabile.</li>
+    <li><strong>Display / Body / Mono</strong>: i font citati nella sezione Tipografia; il primo della lista è quello richiesto, il sostituto libero segue il segno ≈.</li>
+    <li><strong>Componenti</strong>: bottoni, campo, card e tabella costruiti con raggio, bordi e accento dichiarati — servono a vedere il sistema in azione, non sono specificati nel file.</li>
+    <li><strong>Contrasto</strong>: calcolato (WCAG 2.1) su inchiostro/sfondo e accento/sfondo dichiarati; è un controllo sui token, non una misura dello schermo.</li>
+    <li><strong>Scala</strong>: i valori numerici della riga <code>Scale:</code> del file, resi come barre proporzionali.</li>
+  </ul>
+
+  <h3 style="margin:26px 0 8px;font-size:15px">Metodo e limiti</h3>
+  <ul class="intro" style="line-height:1.7">
+    <li>Estrazione: <code>_tools/estrai-token.mjs</code> → <code>dati/design-system.json</code> (35 sistemi, zero dipendenze).</li>
+    <li>Impaginazione: <code>_tools/genera-gallery.mjs</code>, che legge solo quel JSON.</li>
+    <li>Il repo è fermo ad aprile 2026: i token sono quelli di allora, non una versione aggiornata.</li>
+    <li>Dove il file non dichiara un valore (es. raggio in alcuni sistemi) la card mostra quello ricavato dal testo, non un default inventato.</li>
+    <li>Screenshot: still di homepage pubbliche, usati come riferimento editoriale; i marchi restano dei rispettivi titolari.</li>
+  </ul>
+</div>
+<footer class="foot">
+  <p>Fonte: <a href="https://github.com/rohitg00/awesome-claude-design" rel="noopener">github.com/rohitg00/awesome-claude-design</a> (MIT) · commit <code>7f60ee5</code> · licenza delle immagini secondo <a href="https://github.com/rohitg00/awesome-claude-design/blob/main/assets/previews/ATTRIBUTION.md" rel="noopener">ATTRIBUTION.md</a>.</p>
+</footer>
+<script>
+const btns=[...document.querySelectorAll('.fbtn[data-fam]')];
+function filtra(f){
+  document.querySelectorAll('.famsec').forEach(s=>{s.hidden = f!=='tutte' && s.dataset.fam!==f;});
+  btns.forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.fam===f)));
+}
+btns.forEach(b=>b.addEventListener('click',()=>filtra(b.dataset.fam)));
+const pt=document.getElementById('solo-palette');
+if(pt) pt.addEventListener('click',()=>{const on=document.body.classList.toggle('solo-palette');pt.setAttribute('aria-pressed',String(on));});
+</script>
+</body>
+</html>
